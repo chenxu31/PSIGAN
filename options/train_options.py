@@ -4,6 +4,9 @@ from .base_options import BaseOptions
 class TrainOptions(BaseOptions):
     def initialize(self):
         BaseOptions.initialize(self)
+        self.parser.add_argument('--gpu', type=int, default=0, help='gpu id')
+        self.parser.add_argument('--task', type=str, default="pelvic", choices=("pelvic", "amos"), help='gpu id')
+        self.parser.add_argument('--num_classes', type=int, default=4, help='frequency of showing training results on screen')
         self.parser.add_argument('--display_freq', type=int, default=10, help='frequency of showing training results on screen')
         self.parser.add_argument('--ct_seg_val_freq', type=int, default=2000, help='frequency of showing training results on screen')
         self.parser.add_argument('--CT_merge_alpha', type=float, default=0.25, help='frequency of showing training results on screen')

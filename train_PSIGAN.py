@@ -48,7 +48,7 @@ def normalize_data_MRI(data):
     data=data*2./1000 - 1
 
     return  (data)
-    
+
 
     
 model = create_model(opt)

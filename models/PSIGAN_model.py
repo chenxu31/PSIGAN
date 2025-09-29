@@ -63,7 +63,7 @@ class PSIGAN(BaseModel):
         self.test_AB = self.Tensor(nb, opt.output_nc, size, size) # input B        
         self.test_A_y = self.Tensor(nb, opt.output_nc, size, size) # input B            
        
-        self.num_organ=1+4 # background + organ number
+        self.num_organ=opt.num_classes # background + organ number
         self.netG_A = networks.define_G(1, 1,
                                         opt.ngf, opt.which_model_netG, opt.norm, not opt.no_dropout, opt.init_type, self.gpu_ids)
         self.netG_B = networks.define_G(1, 1,
